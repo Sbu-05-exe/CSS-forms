@@ -1,0 +1,63 @@
+body {
+	margin: 30px;
+	font-family: Arial;
+}
+
+.teams {
+	display: flex;
+	flex-direction: column;
+}
+
+input[type="radio"] {
+
+	opacity:0;
+	width: 0;
+	height: 0;
+	position: absolute;
+}
+
+label {
+	position: relative;
+	cursor: pointer;
+	padding-left: 25px;
+	margin-bottom: 10px;
+}
+
+label span {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+
+	height: 20px;
+	width: 20px;
+
+	background-color: #ddd;
+	border-radius: 50px;
+	transition: .3s background-color;
+}
+
+label span:before {
+	content: "";
+	position: absolute;
+	display: none;
+	top: 6px;
+	left: 6px;
+
+	width: 8px;
+	height: 8px;
+	border-radius: 50px;
+	background-color: white;
+
+}
+
+label span:hover {
+	background-color: #ccc;
+}
+
+input:checked ~ span {
+	background-color: #2eeadc;
+}
+
+input:checked ~ span:before {
+	display:block;
+}
