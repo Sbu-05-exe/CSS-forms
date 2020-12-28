@@ -1,0 +1,68 @@
+body {
+  margin: 30px;
+  font-family: Arial;
+}
+
+.groceries {
+  display: flex;
+  flex-direction: column;
+}
+
+/*container*/
+label {
+  padding-left: 30px;
+  position: relative; /*contain absolute elements*/
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+/*hide the checkbox*/ 
+input[type=checkbox]{
+   opacity: 0; 
+   height: 0; 
+   width: 0; 
+   position: absolute;   
+}
+
+label span {
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ddd;
+  width: 20px;
+  height: 20px;
+  transition: .3s background-color;
+
+}
+
+label span:hover {  
+  
+  background-color: #ccc;
+
+}
+
+label span:after {
+  content: "";
+  position: absolute;
+  display: none; 
+  
+/* check icon */
+  top: 2px;
+  left: 6px;
+  width: 4px;
+  height: 10px;
+  border: solid white;
+  border-width: 0px 3px 3px 0px;
+  transform: rotate(45deg);
+
+}
+
+input:checked ~ span {
+  background-color: #2eaadc;
+  /*text-decoration: line-through;*/
+}
+
+input:checked ~ span:after {
+  display: block;
+}
